@@ -9,26 +9,47 @@ let inputNumber = prompt("Input your number", '');
 let dividentNumber = 2;
 let primeCount = 0;
 
-while (dividentNumber <= inputNumber) {
-    let divisorNumber = dividentNumber - 1;
+// while (dividentNumber <= inputNumber) {
+//     let divisorNumber = dividentNumber - 1;
+//     let isNumberPrime = true;
+
+//     while (divisorNumber > 1) {
+
+//         if (dividentNumber % divisorNumber == 0) {
+//             isNumberPrime = false;
+//             break;
+//         }
+
+//         divisorNumber--;
+//     }
+//     if (isNumberPrime) {
+//         console.log(`%c ${dividentNumber} is prime number`, "color: orange")
+//         primeCount++;
+//     }
+
+//     dividentNumber++;
+// }
+
+//same logic - using for loop
+
+
+for (let i = 2; i <= inputNumber; i++) {
     let isNumberPrime = true;
 
-    while (divisorNumber > 1) {
-
-        if (dividentNumber % divisorNumber == 0) {
+    for (let j = 2; j < i; j++) {
+        if (i % j == 0) {
             isNumberPrime = false;
-            break;
+            // break;
         }
-
-        divisorNumber--;
     }
+
     if (isNumberPrime) {
-        console.log(`%c ${dividentNumber} is prime number`, "color: orange")
+        console.log(`%c ${i} is prime number`, "color: orange")
         primeCount++;
     }
-
-    dividentNumber++;
 }
-console.log(`prime number betwee 1 and ${inputNumber}`)
-console.log(primeCount)
+
+
+console.log(`prime numbers between 1 and ${inputNumber}`)
+console.log(`total prime numbers: ${primeCount}`)
 
