@@ -5,28 +5,30 @@
 
 
 let inputNumber = prompt("Input your number", '');
-let one = 2;
-let count = 0;
-while (inputNumber >= one) {
+// let inputNumber = 50;
+let dividentNumber = 2;
+let primeCount = 0;
 
-    let divisor = one - 1;
+while (dividentNumber <= inputNumber) {
+    let divisorNumber = dividentNumber - 1;
     let isNumberPrime = true;
 
-    while (divisor > 1) {
+    while (divisorNumber > 1) {
 
-        if (one % divisor == 0) {
+        if (dividentNumber % divisorNumber == 0) {
             isNumberPrime = false;
             break;
         }
 
-        divisor--;
+        divisorNumber--;
     }
     if (isNumberPrime) {
-        console.log(`%c ${one} is prime number`, "color: orange")
-        count++;
+        console.log(`%c ${dividentNumber} is prime number`, "color: orange")
+        primeCount++;
     }
 
-    one++;
+    dividentNumber++;
 }
 console.log(`prime number betwee 1 and ${inputNumber}`)
-console.log(count)
+console.log(primeCount)
+
